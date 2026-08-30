@@ -1,0 +1,7 @@
+{
+  "value_rmse": 0.58,
+  "watch_minutes_mae": 8.7,
+  "retention_accuracy": 0.74,
+  "retention_roc_auc": 0.79,
+  "note": "Illustrative deterministic baseline metrics. Run scripts/run_pipeline.sh for PyTorch metrics."
+}

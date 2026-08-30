@@ -1,0 +1,4 @@
+title,genre,entry_surface,value_score,predicted_value_score,predicted_retention_probability
+Comedy Story 014,comedy,home_reco,4.31,4.06,0.82
+Thriller Story 209,thriller,search,3.76,3.91,0.74
+Sports Story 088,sports,notification,3.12,3.28,0.61
