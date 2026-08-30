@@ -1,0 +1,28 @@
+{
+  "metrics": {
+    "baseline": "gradient_boosted_tabular",
+    "value_rmse": 0.41,
+    "watch_minutes_mae": 5.93,
+    "retention_accuracy": 0.76,
+    "retention_roc_auc": 0.81,
+    "test_rows": 5000
+  },
+  "highest_error_segments": [
+    {
+      "subscription_tier": "free",
+      "genre": "sports",
+      "rows": 168,
+      "value_mae": 0.39,
+      "retention_rate": 0.65,
+      "mean_predicted_retention": 0.62
+    },
+    {
+      "subscription_tier": "premium",
+      "genre": "documentary",
+      "rows": 142,
+      "value_mae": 0.34,
+      "retention_rate": 0.78,
+      "mean_predicted_retention": 0.8
+    }
+  ]
+}

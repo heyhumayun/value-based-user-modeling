@@ -48,6 +48,8 @@ Primary metrics:
 - Value score: RMSE.
 - Watch minutes: MAE.
 - Retention: accuracy and ROC-AUC.
+- Segment diagnostics: value MAE by subscription tier and genre.
+- Product artifact: value-aware candidate ranking for content surfacing.
 
 Useful ablations:
 
@@ -55,6 +57,15 @@ Useful ablations:
 - Remove interaction context.
 - Single-task heads versus multi-task learning.
 - Replace transformer text encoder with mean-pooled token embeddings.
+- Compare neural model against `baselines.py` gradient-boosted tabular models.
+
+## Experiment Assets Added
+
+- `src/value_modeling/baselines.py` trains strong tabular baselines so the neural model is not evaluated in isolation.
+- `src/value_modeling/experiments.py` creates a quick reproducible suite for reviewers.
+- `src/value_modeling/recommend.py` converts value, retention, completion, and watch time into a transparent content candidate list.
+
+These additions make the project feel closer to an applied research workflow: establish a baseline, measure errors by segment, then produce an artifact that a product team could inspect.
 
 ## Sample Findings
 
@@ -70,6 +81,7 @@ The included sample metrics are illustrative baseline artifacts, not claimed pro
 - You can design a reproducible research dataset when private platform data is unavailable.
 - You can combine tabular, behavioral, and content-text signals.
 - You can document assumptions and limitations instead of pretending synthetic data is real.
+- You can turn model outputs into reviewable platform decisions, not just report one aggregate metric.
 
 ## Limitations
 

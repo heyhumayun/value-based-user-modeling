@@ -7,6 +7,8 @@ import numpy as np
 import pandas as pd
 import torch
 
+from value_modeling.io import load_joined
+
 
 CAT_COLUMNS = [
     "region",
@@ -39,14 +41,6 @@ class FeatureSpec:
     num_mean: dict[str, float]
     num_std: dict[str, float]
     max_tokens: int = 18
-
-
-def load_joined(data_dir: str | Path) -> pd.DataFrame:
-    data = Path(data_dir)
-    users = pd.read_csv(data / "users.csv")
-    content = pd.read_csv(data / "content.csv")
-    interactions = pd.read_csv(data / "interactions.csv")
-    return interactions.merge(users, on="user_id").merge(content, on="content_id")
 
 
 def build_spec(df: pd.DataFrame, max_tokens: int = 18) -> FeatureSpec:

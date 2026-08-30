@@ -38,3 +38,7 @@ The synthetic generator may encode assumptions that are too clean compared with 
 ## Evaluation
 
 Use `results/eval_metrics.json` after running the pipeline. Suggested metrics are RMSE, MAE, accuracy, ROC-AUC, and calibration.
+
+## Baseline Comparison
+
+Use `src/value_modeling/baselines.py` to compare the neural model against gradient-boosted tabular models. The baseline output also includes high-error subscription-tier and genre segments, which is useful for showing research maturity during review.

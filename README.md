@@ -18,6 +18,9 @@ The project is deliberately scoped like a strong internship portfolio submission
 
 - Synthetic but realistic dataset design for recommendation/user modeling.
 - PyTorch multi-task modeling with categorical embeddings and a lightweight transformer encoder.
+- Gradient-boosted tabular baselines for model comparison.
+- Segment-level error analysis to identify weak user/content cohorts.
+- Value-aware content candidate ranking for product interpretation.
 - Reproducible training, evaluation, and inference scripts.
 - SQL analysis using DuckDB over local CSV files.
 - Research-style documentation of assumptions, architecture, metrics, and next steps.
@@ -41,6 +44,9 @@ The project is deliberately scoped like a strong internship portfolio submission
 │   ├── data.py                  # Synthetic dataset generation
 │   ├── features.py              # Vocabulary and tensor feature preparation
 │   ├── model.py                 # PyTorch multi-task value model
+│   ├── baselines.py             # Tabular baselines + segment diagnostics
+│   ├── experiments.py           # Quick reproducible experiment suite
+│   ├── recommend.py             # Value-aware content candidate ranking
 │   ├── train.py                 # Training entry point
 │   ├── evaluate.py              # Evaluation entry point
 │   ├── infer.py                 # Inference example
@@ -57,9 +63,11 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 python -m value_modeling.data --output-dir data --n-users 1200 --n-content 350 --n-events 25000
+python -m value_modeling.baselines --data-dir data --output-path results/baseline_metrics.json
 python -m value_modeling.train --data-dir data --model-path results/value_model.pt --metrics-path results/train_metrics.json
 python -m value_modeling.evaluate --data-dir data --model-path results/value_model.pt --output-path results/eval_metrics.json
 python -m value_modeling.infer --data-dir data --model-path results/value_model.pt --output-path results/sample_predictions.csv
+python -m value_modeling.recommend --data-dir data --output-path results/value_aware_content_candidates.csv
 python -m value_modeling.sql_analysis --data-dir data --query-file sql/ott_value_analysis.sql --output-path results/sql_summary.csv
 ```
 
@@ -67,6 +75,12 @@ Or run:
 
 ```bash
 bash scripts/run_pipeline.sh
+```
+
+For a faster review run:
+
+```bash
+make experiment
 ```
 
 ## Modeling Approach
@@ -98,6 +112,8 @@ The sample outputs in `results/` were generated from the same synthetic data pro
 
 Full PyTorch numbers will vary slightly by machine, seed, and dataset size.
 
+The repo also includes `results/baseline_metrics_sample.json` and `results/value_aware_content_candidates_sample.csv` so reviewers can immediately understand the expected outputs.
+
 ## SQL Analysis Examples
 
 `sql/ott_value_analysis.sql` includes examples such as:
@@ -114,6 +130,7 @@ Full PyTorch numbers will vary slightly by machine, seed, and dataset size.
 - Calibrate perceived value with explicit survey labels.
 - Add model interpretability using SHAP or integrated gradients.
 - Compare multitask learning with separate value, engagement, and retention models.
+- Add ranking metrics such as NDCG and coverage for recommendation candidates.
 
 ## Sony Research India Fit
 
