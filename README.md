@@ -12,6 +12,8 @@ OTT platforms need to understand more than clicks. A user can watch a title, but
 - Use transformer-style content metadata encoding to connect text/content features with user behavior.
 - Explore the generated data with SQL before and after modeling.
 
+The project is deliberately scoped like a strong internship portfolio submission: complete enough to show domain thinking, small enough for a reviewer to run locally, and documented enough that the modeling assumptions are visible.
+
 ## Skills Demonstrated
 
 - Synthetic but realistic dataset design for recommendation/user modeling.
@@ -29,6 +31,10 @@ OTT platforms need to understand more than clicks. A user can watch a title, but
 ├── scripts/
 │   ├── run_pipeline.sh          # Local end-to-end run
 │   └── make_sample_outputs.py   # Lightweight sample artifact generator
+├── docs/
+│   ├── PROJECT_REPORT.md         # Research framing, assumptions, evaluation plan
+│   ├── MODEL_CARD.md             # Intended use, risks, and model details
+│   └── RECRUITER_SUMMARY.md      # Short reviewer-facing project pitch
 ├── sql/
 │   └── ott_value_analysis.sql   # SQL examples for dataset exploration
 ├── src/value_modeling/
@@ -77,6 +83,8 @@ The PyTorch architecture uses categorical embeddings, normalized numeric feature
 - `watch_minutes`: regression target for engagement intensity.
 - `retained_7d`: binary classification target for return likelihood.
 
+For a deeper explanation, see `docs/PROJECT_REPORT.md` and `docs/MODEL_CARD.md`.
+
 ## Example Results
 
 The sample outputs in `results/` were generated from the same synthetic data process with a lightweight deterministic baseline so the repo has readable artifacts even before full PyTorch training:
@@ -110,3 +118,7 @@ Full PyTorch numbers will vary slightly by machine, seed, and dataset size.
 ## Sony Research India Fit
 
 This project directly maps to the role's focus on user behavior modeling for OTT platforms: predictive modeling, value-based modeling, LLM/transformer relevance through content metadata encoding, SQL analysis, and reproducible research-style implementation.
+
+## Reviewer Notes
+
+The repository avoids AWS by design because the companion causal inference project contains the optional AWS workflow. Keeping the two repos separated makes the portfolio easier to scan and matches the role's two major themes: value-based modeling and causal intervention design.
