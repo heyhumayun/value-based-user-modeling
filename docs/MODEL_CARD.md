@@ -16,7 +16,7 @@ Portfolio and research demonstration for predicting:
 
 - Production ranking without real-world validation.
 - User-level decisioning where fairness, privacy, or regulatory review is required.
-- Claims about actual Sony, SonyLIV, or any private OTT platform data.
+- Claims about any private OTT platform data.
 
 ## Inputs
 

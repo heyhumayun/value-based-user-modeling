@@ -1,6 +1,6 @@
 # Value-Based User Modeling for OTT Platforms
 
-An end-to-end, coursework-level AI research portfolio project inspired by Sony Research India's AI Research Intern role. The project builds a reproducible synthetic OTT interaction dataset and trains a PyTorch model that predicts user-perceived value, engagement, and short-term retention from user behavior, content metadata, and lightweight text embeddings.
+An end-to-end, coursework-level AI research portfolio project for value-based modeling on OTT-style user interactions. The project builds a reproducible synthetic dataset and trains a PyTorch model that predicts user-perceived value, engagement, and short-term retention from user behavior, content metadata, and lightweight text embeddings.
 
 ## Why This Project
 
@@ -131,10 +131,6 @@ The repo also includes `results/baseline_metrics_sample.json` and `results/value
 - Add model interpretability using SHAP or integrated gradients.
 - Compare multitask learning with separate value, engagement, and retention models.
 - Add ranking metrics such as NDCG and coverage for recommendation candidates.
-
-## Sony Research India Fit
-
-This project directly maps to the role's focus on user behavior modeling for OTT platforms: predictive modeling, value-based modeling, LLM/transformer relevance through content metadata encoding, SQL analysis, and reproducible research-style implementation.
 
 ## Reviewer Notes
 

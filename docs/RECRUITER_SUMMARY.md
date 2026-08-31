@@ -1,6 +1,6 @@
 # Recruiter Summary
 
-This repository demonstrates an OTT user modeling project aligned with Sony Research India's AI Research Intern role.
+This repository demonstrates an end-to-end OTT user modeling project with reproducible data generation, multitask learning, text encoding, baseline comparison, and product-facing analysis.
 
 ## What It Proves
 
