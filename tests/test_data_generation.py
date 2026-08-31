@@ -24,4 +24,4 @@ def test_value_aware_recommendations(tmp_path: Path) -> None:
     recommend_content(str(tmp_path / "data"), str(output), top_k=5)
     candidates = pd.read_csv(output)
     assert 1 <= len(candidates) <= 5
-    assert "portfolio_score" in candidates.columns
+    assert "content_priority_score" in candidates.columns

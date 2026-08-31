@@ -1,6 +1,6 @@
 # Value-Based User Modeling for OTT Platforms
 
-An end-to-end, coursework-level AI research portfolio project for value-based modeling on OTT-style user interactions. The project builds a reproducible synthetic dataset and trains a PyTorch model that predicts user-perceived value, engagement, and short-term retention from user behavior, content metadata, and lightweight text embeddings.
+An end-to-end research project for value-based modeling on OTT-style user interactions. The project builds a reproducible synthetic dataset and trains a PyTorch model that predicts user-perceived value, engagement, and short-term retention from user behavior, content metadata, and lightweight text embeddings.
 
 ## Why This Project
 
@@ -12,7 +12,7 @@ OTT platforms need to understand more than clicks. A user can watch a title, but
 - Use transformer-style content metadata encoding to connect text/content features with user behavior.
 - Explore the generated data with SQL before and after modeling.
 
-The project is deliberately scoped like a strong internship portfolio submission: complete enough to show domain thinking, small enough for a reviewer to run locally, and documented enough that the modeling assumptions are visible.
+The implementation is compact enough to run locally while keeping the modeling assumptions, evaluation choices, and product interpretation visible.
 
 ## Skills Demonstrated
 
@@ -37,7 +37,7 @@ The project is deliberately scoped like a strong internship portfolio submission
 ├── docs/
 │   ├── PROJECT_REPORT.md         # Research framing, assumptions, evaluation plan
 │   ├── MODEL_CARD.md             # Intended use, risks, and model details
-│   └── RECRUITER_SUMMARY.md      # Short reviewer-facing project pitch
+│   └── PROJECT_SUMMARY.md        # Concise technical project summary
 ├── sql/
 │   └── ott_value_analysis.sql   # SQL examples for dataset exploration
 ├── src/value_modeling/
@@ -112,7 +112,7 @@ The sample outputs in `results/` were generated from the same synthetic data pro
 
 Full PyTorch numbers will vary slightly by machine, seed, and dataset size.
 
-The repo also includes `results/baseline_metrics_sample.json` and `results/value_aware_content_candidates_sample.csv` so reviewers can immediately understand the expected outputs.
+The repo also includes `results/baseline_metrics_sample.json` and `results/value_aware_content_candidates_sample.csv` so the expected outputs are visible before a full run.
 
 ## SQL Analysis Examples
 
@@ -132,6 +132,6 @@ The repo also includes `results/baseline_metrics_sample.json` and `results/value
 - Compare multitask learning with separate value, engagement, and retention models.
 - Add ranking metrics such as NDCG and coverage for recommendation candidates.
 
-## Reviewer Notes
+## Design Notes
 
-The repository avoids AWS by design because the companion causal inference project contains the optional AWS workflow. Keeping the two repos separated makes the portfolio easier to scan and matches the role's two major themes: value-based modeling and causal intervention design.
+AWS is intentionally outside this repository's scope. The project stays focused on local value modeling, reproducible experiments, and transparent content and user-level analysis.

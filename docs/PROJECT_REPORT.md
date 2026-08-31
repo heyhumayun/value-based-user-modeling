@@ -4,7 +4,7 @@
 
 Can we estimate the value a user derives from an OTT session using content metadata, user history, and interaction context, then jointly predict engagement and retention?
 
-This is intentionally framed as a platform research problem rather than a generic prediction task. A recruiter should see that the project connects modeling choices to OTT business questions: satisfaction, return probability, content value, and product surface quality.
+This is framed as a platform research problem rather than a generic prediction task. The modeling choices connect to OTT questions about satisfaction, return probability, content value, and product-surface quality.
 
 ## Dataset Design
 
@@ -62,10 +62,10 @@ Useful ablations:
 ## Experiment Assets Added
 
 - `src/value_modeling/baselines.py` trains strong tabular baselines so the neural model is not evaluated in isolation.
-- `src/value_modeling/experiments.py` creates a quick reproducible suite for reviewers.
+- `src/value_modeling/experiments.py` creates a quick reproducible experiment suite.
 - `src/value_modeling/recommend.py` converts value, retention, completion, and watch time into a transparent content candidate list.
 
-These additions make the project feel closer to an applied research workflow: establish a baseline, measure errors by segment, then produce an artifact that a product team could inspect.
+Together, these components form an applied research workflow: establish a baseline, measure errors by segment, then produce an artifact that a product team could inspect.
 
 ## Sample Findings
 
@@ -75,7 +75,7 @@ The included sample metrics are illustrative baseline artifacts, not claimed pro
 - Retention is noisier than value because it includes habit and stochastic return behavior.
 - Continue-watching and high-affinity genres should rank highly in SQL exploration.
 
-## What This Shows a Recruiter
+## Engineering Takeaways
 
 - You understand that OTT value is not identical to watch time.
 - You can design a reproducible research dataset when private platform data is unavailable.

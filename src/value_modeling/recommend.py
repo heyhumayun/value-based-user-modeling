@@ -21,7 +21,7 @@ def recommend_content(data_dir: str, output_path: str, top_k: int = 20) -> None:
         .reset_index()
     )
     summary = summary[summary.sessions >= max(5, int(df.shape[0] * 0.0005))]
-    summary["portfolio_score"] = (
+    summary["content_priority_score"] = (
         0.45 * summary.avg_value_score
         + 1.4 * summary.retention_rate
         + 0.6 * summary.avg_completion_rate
@@ -36,10 +36,10 @@ def recommend_content(data_dir: str, output_path: str, top_k: int = 20) -> None:
         "avg_value_score",
         "retention_rate",
         "avg_completion_rate",
-        "portfolio_score",
+        "content_priority_score",
     ]
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-    summary.sort_values("portfolio_score", ascending=False)[columns].head(top_k).round(3).to_csv(output_path, index=False)
+    summary.sort_values("content_priority_score", ascending=False)[columns].head(top_k).round(3).to_csv(output_path, index=False)
 
 
 def parse_args() -> argparse.Namespace:

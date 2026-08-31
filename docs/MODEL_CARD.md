@@ -6,7 +6,7 @@
 
 ## Intended Use
 
-Portfolio and research demonstration for predicting:
+Research implementation for predicting:
 
 - User-perceived value score.
 - Engagement through watch minutes.
